@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FERRO-PRO: ferretería industrial con más de 25,000 productos en stock, asesoría técnica y despacho en 24 horas.">
+<title>FERRO-PRO | Ferretería industrial y suministros pesados</title>
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { steel: { 950: '#0b1120', 900: '#0f172a', 800: '#1e293b', 700: '#334155' }, amber: { 450: '#fbae1f' } },
+        fontFamily: { sans: ['Inter', 'sans-serif'], display: ['"Barlow Condensed"', 'Inter', 'sans-serif'] },
+        keyframes: { spinslow: { to: { transform: 'rotate(360deg)' } } },
+        animation: { 'spin-slow': 'spinslow 12s linear infinite' }
+      }
+    }
+  }
+</script>
+
+<!-- Fuentes e iconos -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-steel-950 text-slate-200 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+<!-- Barra superior -->
+<div class="bg-steel-900 border-b border-steel-800 text-xs hidden sm:block">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-wrap justify-between gap-2 text-slate-400">
+    <div class="flex flex-wrap gap-x-6 gap-y-1">
+      <span><i class="fa-solid fa-phone text-amber-500 mr-2"></i>+52 55 8000 3376</span>
+      <span><i class="fa-solid fa-envelope text-amber-500 mr-2"></i>cotizaciones@ferropro.com</span>
+      <span><i class="fa-solid fa-clock text-amber-500 mr-2"></i>Lun–Vie 7:30–18:30 · Sáb 8:00–14:00</span>
+    </div>
+    <span class="text-amber-400 font-medium"><i class="fa-solid fa-truck-fast mr-2"></i>Despacho en 24 h en productos en stock</span>
+  </div>
+</div>
+
+<!-- Encabezado -->
+<header class="sticky top-0 z-50 bg-steel-900/95 backdrop-blur border-b border-steel-800">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="#inicio" class="flex items-center gap-3" aria-label="FERRO-PRO, inicio">
+      <span class="w-11 h-11 rounded-lg bg-amber-500 text-steel-950 grid place-items-center"><i class="fa-solid fa-gear text-xl animate-spin-slow"></i></span>
+      <span class="leading-none">
+        <span class="font-display text-3xl font-bold text-white tracking-wide">FERRO<span class="text-amber-500">-PRO</span></span>
+        <span class="block text-[11px] text-slate-400 mt-0.5">Ferretería industrial</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex gap-7 text-sm font-semibold" aria-label="Principal">
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#inicio">Inicio</a>
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#catalogo">Catálogo</a>
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#servicios">Servicios</a>
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#nosotros">Nosotros</a>
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#marcas">Marcas</a>
+      <a class="nav-link text-slate-300 hover:text-amber-500 border-b-2 border-transparent py-1" href="#cotizacion">Cotizar</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#cotizacion" class="relative bg-amber-500 hover:bg-amber-450 text-steel-950 font-bold px-4 py-2.5 rounded-lg text-sm flex items-center gap-2 transition-colors">
+        <i class="fa-solid fa-file-invoice"></i><span class="hidden sm:inline">Mi cotización</span>
+        <span id="quote-count" class="bg-steel-950 text-amber-400 text-xs rounded-full min-w-[1.4rem] h-6 px-1 grid place-items-center">0</span>
+      </a>
+      <button id="menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-steel-900 border-t border-steel-800 px-6 pb-5">
+    <a class="block py-3 border-b border-steel-800 text-slate-200 font-semibold" href="#inicio">Inicio</a>
+    <a class="block py-3 border-b border-steel-800 text-slate-200 font-semibold" href="#catalogo">Catálogo</a>
+    <a class="block py-3 border-b border-steel-800 text-slate-200 font-semibold" href="#servicios">Servicios</a>
+    <a class="block py-3 border-b border-steel-800 text-slate-200 font-semibold" href="#nosotros">Nosotros</a>
+    <a class="block py-3 border-b border-steel-800 text-slate-200 font-semibold" href="#marcas">Marcas</a>
+    <a class="block py-3 text-slate-200 font-semibold" href="#cotizacion">Cotizar</a>
+  </div>
+</header>
+
+<main>
+<!-- INICIO -->
+<section id="inicio" class="bg-grid border-b border-steel-800">
+  <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[0.95] tracking-tight">
+        Herramienta y suministro industrial,<br>en su planta antes de que pare la línea.
+      </h1>
+      <p class="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed">
+        Más de 25,000 productos en stock para construcción, minería y talleres. Asesoría técnica directa y envíos a todo el país.
+      </p>
+
+      <form id="hero-search" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl" role="search">
+        <label for="hero-q" class="sr-only">Buscar producto</label>
+        <input id="hero-q" type="search" placeholder="Busque por producto o código: rotomartillo, EPP, compresor…"
+               class="flex-1 bg-steel-800 border border-steel-700 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:border-amber-500">
+        <button class="bg-amber-500 hover:bg-amber-450 text-steel-950 font-bold px-6 py-3.5 rounded-lg transition-colors">Buscar en catálogo</button>
+      </form>
+
+      <dl class="mt-12 grid grid-cols-3 gap-4 max-w-xl border-t border-steel-800 pt-8">
+        <div><dt class="text-xs text-slate-400">Productos en stock</dt><dd class="font-display text-4xl font-bold text-amber-500">25,000+</dd></div>
+        <div><dt class="text-xs text-slate-400">Despacho en stock</dt><dd class="font-display text-4xl font-bold text-amber-500">24 h</dd></div>
+        <div><dt class="text-xs text-slate-400">Empresas clientes</dt><dd class="font-display text-4xl font-bold text-amber-500">1,500+</dd></div>
+      </dl>
+    </div>
+
+    <aside class="lg:col-span-5" aria-label="Líneas principales">
+      <div class="bg-steel-900 border border-steel-700 rounded-xl overflow-hidden">
+        <div class="hazard h-2"></div>
+        <div class="p-6">
+          <h2 class="font-display text-2xl font-bold text-white">Líneas más pedidas esta semana</h2>
+          <ul class="mt-5 divide-y divide-steel-800">
+            <li><a href="#catalogo" data-cat="Eléctricas" class="cat-jump flex items-center gap-4 py-4 hover:text-amber-400 transition-colors"><i class="fa-solid fa-bolt w-8 text-2xl text-amber-500"></i><span><b class="block text-white">Herramientas eléctricas</b><span class="text-sm text-slate-400">Esmeriladoras, rotomartillos, sierras</span></span></a></li>
+            <li><a href="#catalogo" data-cat="Seguridad" class="cat-jump flex items-center gap-4 py-4 hover:text-amber-400 transition-colors"><i class="fa-solid fa-helmet-safety w-8 text-2xl text-amber-500"></i><span><b class="block text-white">Seguridad industrial y EPP</b><span class="text-sm text-slate-400">Cascos, guantes, respiradores</span></span></a></li>
+            <li><a href="#catalogo" data-cat="Neumática" class="cat-jump flex items-center gap-4 py-4 hover:text-amber-400 transition-colors"><i class="fa-solid fa-screwdriver-wrench w-8 text-2xl text-amber-500"></i><span><b class="block text-white">Neumática y torque</b><span class="text-sm text-slate-400">Compresores y llaves de impacto</span></span></a></li>
+            <li><a href="#catalogo" data-cat="Fijación" class="cat-jump flex items-center gap-4 py-4 hover:text-amber-400 transition-colors"><i class="fa-solid fa-link w-8 text-2xl text-amber-500"></i><span><b class="block text-white">Fijación y anclaje</b><span class="text-sm text-slate-400">Tornillería, anclas, cadenas</span></span></a></li>
+          </ul>
+          <a href="https://wa.me/525580003376" target="_blank" rel="noopener" class="mt-2 flex items-center justify-between bg-amber-500 hover:bg-amber-450 transition-colors text-steel-950 rounded-lg px-4 py-3 font-bold">
+            <span><i class="fa-brands fa-whatsapp mr-2 text-xl"></i>¿Necesita soporte técnico ahora?</span><span class="text-sm">Chat</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-white">Catálogo industrial</h2>
+        <p class="text-slate-400 mt-2 max-w-xl">Añada los productos que necesita y envíe una sola solicitud de cotización con precios por volumen.</p>
+      </div>
+      <div id="filters" class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría"></div>
+    </div>
+    <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+    <p id="empty" class="hidden text-center text-slate-400 py-16">No encontramos productos con esa búsqueda. Pruebe con otra palabra o <a class="text-amber-400 underline" href="#cotizacion">pida una cotización a medida</a>.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-20 bg-steel-900 border-y border-steel-800">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-white">Servicios para operaciones que no pueden parar</h2>
+      <p class="text-slate-400 mt-4">Del primer pedido a la reposición programada, un equipo asignado a su cuenta.</p>
+    </div>
+    <ul class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+      <li class="flex gap-4"><i class="fa-solid fa-user-gear text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Asesoría técnica</h3><p class="text-sm text-slate-400 mt-1">Ingenieros que le ayudan a elegir el equipo según la norma y la carga de trabajo.</p></div></li>
+      <li class="flex gap-4"><i class="fa-solid fa-truck-fast text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Despacho urgente</h3><p class="text-sm text-slate-400 mt-1">Entrega en 24 h en productos con stock y seguimiento del pedido.</p></div></li>
+      <li class="flex gap-4"><i class="fa-solid fa-boxes-packing text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Reposición programada</h3><p class="text-sm text-slate-400 mt-1">Pedidos recurrentes de consumibles para que su almacén nunca se quede sin stock.</p></div></li>
+      <li class="flex gap-4"><i class="fa-solid fa-wrench text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Reparación y calibración</h3><p class="text-sm text-slate-400 mt-1">Mantenimiento de herramienta eléctrica y calibración de torquímetros.</p></div></li>
+      <li class="flex gap-4"><i class="fa-solid fa-credit-card text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Crédito empresarial</h3><p class="text-sm text-slate-400 mt-1">Financiamiento a 30 y 60 días para constructoras y contratistas.</p></div></li>
+      <li class="flex gap-4"><i class="fa-solid fa-file-circle-check text-amber-500 text-xl mt-1 w-6"></i><div><h3 class="font-bold text-white">Certificados y fichas técnicas</h3><p class="text-sm text-slate-400 mt-1">Documentación ISO, ANSI y DIN lista para sus auditorías.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-20">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-white">Quince años surtiendo proyectos de gran escala</h2>
+      <p class="text-slate-300 mt-5 leading-relaxed">Somos distribuidor industrial con almacén propio y una red de entrega nacional. Trabajamos con contratistas, minas, plantas y talleres que necesitan producto certificado y respuesta rápida.</p>
+      <p class="text-slate-300 mt-4 leading-relaxed">Cada cliente tiene un asesor asignado que conoce su consumo y le avisa antes de que se agote lo que usa a diario.</p>
+      <a href="#cotizacion" class="inline-block mt-8 bg-amber-500 hover:bg-amber-450 text-steel-950 font-bold px-6 py-3 rounded-lg transition-colors">Hablar con un asesor</a>
+    </div>
+    <div class="grid grid-cols-2 gap-px bg-steel-700 border border-steel-700 rounded-xl overflow-hidden">
+      <div class="bg-steel-900 p-7"><div class="font-display text-5xl font-bold text-amber-500">15</div><p class="text-sm text-slate-400 mt-1">años en el mercado industrial</p></div>
+      <div class="bg-steel-900 p-7"><div class="font-display text-5xl font-bold text-amber-500">32</div><p class="text-sm text-slate-400 mt-1">estados con cobertura de entrega</p></div>
+      <div class="bg-steel-900 p-7"><div class="font-display text-5xl font-bold text-amber-500">98%</div><p class="text-sm text-slate-400 mt-1">de pedidos entregados completos</p></div>
+      <div class="bg-steel-900 p-7"><div class="font-display text-5xl font-bold text-amber-500">ISO 9001</div><p class="text-sm text-slate-400 mt-1">gestión de calidad certificada</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<section id="marcas" class="py-16 bg-steel-900 border-y border-steel-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white text-center">Distribuimos las marcas que su equipo ya conoce</h2>
+    <ul class="mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-center">
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">BOSCH</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">MAKITA</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">DEWALT</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">MILWAUKEE</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">HILTI</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">3M</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">STANLEY</li>
+      <li class="border border-steel-700 rounded-lg py-5 font-display text-2xl font-bold text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors">TRUPER</li>
+    </ul>
+  </div>
+</section>
+
+<!-- COTIZACIÓN -->
+<section id="cotizacion" class="py-20">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-white">Pida su cotización</h2>
+      <p class="text-slate-400 mt-3">Respondemos en menos de 2 horas hábiles. Los productos que añadió se incluyen automáticamente.</p>
+      <div class="mt-8 bg-steel-900 border border-steel-700 rounded-xl p-5">
+        <h3 class="font-bold text-white mb-3">Productos en su cotización</h3>
+        <ul id="quote-list" class="space-y-2 text-sm"></ul>
+        <p id="quote-empty" class="text-sm text-slate-400">Aún no añadió productos. <a href="#catalogo" class="text-amber-400 underline">Ir al catálogo</a> o describa lo que necesita en el formulario.</p>
+      </div>
+    </div>
+
+    <form id="quote-form" class="lg:col-span-7 bg-steel-900 border border-steel-700 rounded-xl p-6 sm:p-8 grid sm:grid-cols-2 gap-5" novalidate>
+      <div><label for="f-name" class="block text-sm font-semibold mb-1.5">Nombre completo</label>
+        <input id="f-name" required autocomplete="name" class="w-full bg-steel-800 border border-steel-700 rounded-lg px-4 py-3 text-white focus:border-amber-500"></div>
+      <div><label for="f-company" class="block text-sm font-semibold mb-1.5">Empresa</label>
+        <input id="f-company" required autocomplete="organization" class="w-full bg-steel-800 border border-steel-700 rounded-lg px-4 py-3 text-white focus:border-amber-500"></div>
+      <div><label for="f-email" class="block text-sm font-semibold mb-1.5">Correo electrónico</label>
+        <input id="f-email" type="email" required autocomplete="email" class="w-full bg-steel-800 border border-steel-700 rounded-lg px-4 py-3 text-white focus:border-amber-500"></div>
+      <div><label for="f-phone" class="block text-sm font-semibold mb-1.5">Teléfono</label>
+        <input id="f-phone" type="tel" required autocomplete="tel" class="w-full bg-steel-800 border border-steel-700 rounded-lg px-4 py-3 text-white focus:border-amber-500"></div>
+      <div class="sm:col-span-2"><label for="f-msg" class="block text-sm font-semibold mb-1.5">¿Qué necesita?</label>
+        <textarea id="f-msg" rows="4" required placeholder="Cantidades, marcas, fecha de entrega y ciudad de destino." class="w-full bg-steel-800 border border-steel-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-amber-500"></textarea></div>
+      <p id="form-error" class="sm:col-span-2 text-red-400 text-sm hidden" role="alert"></p>
+      <div class="sm:col-span-2 flex flex-col sm:flex-row items-center gap-4">
+        <button class="w-full sm:w-auto bg-amber-500 hover:bg-amber-450 text-steel-950 font-bold px-8 py-3.5 rounded-lg transition-colors">Enviar solicitud por WhatsApp</button>
+        <span class="text-xs text-slate-500">Se abrirá WhatsApp con su solicitud lista para enviar.</span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- PIE -->
+<footer class="bg-steel-900 border-t border-steel-800">
+  <div class="hazard h-1.5"></div>
+  <div class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+    <div><span class="font-display text-3xl font-bold text-white">FERRO<span class="text-amber-500">-PRO</span></span>
+      <p class="text-slate-400 mt-3">Ferretería industrial y suministros pesados para construcción, minería y manufactura.</p></div>
+    <div><h3 class="font-bold text-white mb-3">Navegación</h3>
+      <ul class="space-y-2 text-slate-400"><li><a class="hover:text-amber-400" href="#catalogo">Catálogo</a></li><li><a class="hover:text-amber-400" href="#servicios">Servicios</a></li><li><a class="hover:text-amber-400" href="#nosotros">Nosotros</a></li><li><a class="hover:text-amber-400" href="#cotizacion">Cotizar</a></li></ul></div>
+    <div><h3 class="font-bold text-white mb-3">Contacto</h3>
+      <ul class="space-y-2 text-slate-400"><li>+52 55 8000 3376</li><li>cotizaciones@ferropro.com</li><li>Av. Industrial 1450, Parque Industrial Norte</li></ul></div>
+    <div><h3 class="font-bold text-white mb-3">Horario</h3>
+      <ul class="space-y-2 text-slate-400"><li>Lunes a viernes: 7:30–18:30</li><li>Sábado: 8:00–14:00</li><li>Domingo: cerrado</li></ul></div>
+  </div>
+  <div class="border-t border-steel-800 py-5 text-center text-xs text-slate-500">© <span id="year"></span> FERRO-PRO. Todos los derechos reservados.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
